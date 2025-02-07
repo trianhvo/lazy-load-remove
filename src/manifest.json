@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Lazy Load Remover",
+  "version": "1.0",
+  "description": "Remove lazy loading from images with toggle functionality",
+  "permissions": ["storage", "activeTab"],
+  "icons": {
+    "16": "icons/lazy_remove_16.png",
+    "48": "icons/lazy_remove_48.png",
+    "128": "icons/lazy_remove_128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/lazy_remove_16.png",
+      "48": "icons/lazy_remove_48.png",
+      "128": "icons/lazy_remove_128.png"
+    },
+    "default_title": "Lazy Load Remover"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
